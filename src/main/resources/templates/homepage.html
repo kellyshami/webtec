@@ -1,0 +1,320 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <title>Homepage</title>-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--<body>-->
+<!--<h2>Welcome to Homepage</h2>-->
+<!--<p sec:authorize="hasRole('ROLE_ANONYMOUS')">Text visible to anonymous.</p>-->
+<!--<p sec:authorize="hasRole('USER')">Text visible to user.</p>-->
+<!--<p sec:authorize="hasRole('ADMIN')">Text visible to admin.</p>-->
+<!--<p sec:authorize="isAuthenticated()">Text visible only to authenticated users.</p>-->
+
+<!--<div sec:authorize="hasRole('ROLE_ANONYMOUS')">-->
+<!--  <p><a th:href="@{/login}" th:text="'Log in'"></a></p>-->
+<!--  <p><a th:href="@{/register}" th:text="'Register'"></a></p>-->
+<!--</div>-->
+
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--  <p>Logged as: <span sec:authentication="name"></span></p>-->
+<!--  <p>Has role: <span sec:authentication="authorities"></span></p>-->
+<!--  <p sec:authorize="hasAuthority('USER')"><a th:href="@{/dashboard}" th:text="'User Dashboard'"></a></p>-->
+<!--  <p sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/admin/dashboard}" th:text="'Admin Dashboard'"></a></p>-->
+<!--  <a th:href="@{/logout}">Log out</a>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta name = "viewport" content = "width=device-width, initial scale = 1.0">
+  <link rel = "stylesheet" href = "/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@1,700&family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel ="stylesheet" href = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+  <script src="https://kit.fontawesome.com/bf611bc426.js" crossorigin="anonymous"></script>
+  <title>UNIVERSITY WEBSITE></title>
+</head>
+<body>
+<section class = "header">
+  <nav>
+    <a href = "uni.html"><img src = "/img/logo.jpg"></a>
+
+
+    <div class = "nav-links" id = "navLinks">
+
+
+
+      <i class="fas fa-times" onclick ="hideMenu()"></i>
+      <ul>
+        <li> <a href = "uni.html">Home</a></li>
+        <li> <a href = "#about">About</a></li>
+        <li> <a href = "#course">Course</a></li>
+        <li> <a href = "#blog">Blog</a></li>
+        <li> <a href = "#footer">Contact</a></li>
+        <li> <a th:href="@{/register}">Signup</a></li>
+      </ul>
+    </div>
+
+    <i class="fas fa-bars" onclick = "showMenu()"></i>
+  </nav>
+
+  <div class = "text-box">
+    <h1>Warrior's Castle</h1>
+    <p>
+      A University for gettting knowledge in Kigali, Rwanda.
+    </p>
+    <a href =" " class = "hero-btn" >Visit us to know more</a>
+  </div>
+</section>
+<!--------------------COURSES---------------->
+<section id="course" class= "course">
+  <h1>Courses we offer</h1>
+  <p>BACHELORS and MASTERS in IT.
+
+  <div class = "row">
+    <div class = "course-col">
+      <h3> BACHELORS </h3>
+      <p> Bachelors degree in IT.
+        A bachelor's degree (from Middle Latin baccalaureus) or baccalaureate (from Modern Latin baccalaureatus) is an undergraduate academic degree awarded by colleges and universities upon completion of a course of study lasting three to six years (depending on institution and academic discipline). The two most common bachelor's degrees are the Bachelor of IT(BIT) and the Bachelor of Science (BIT or BSc). In some institutions and educational systems, some bachelor's degrees can only be taken as graduate or postgraduate educations after a first degree has been completed, although more commonly the successful completion of a bachelor's degree is a prerequisite for further courses such as a master's or a doctorate.
+      </p></div>
+
+    <div class = "course-col">
+      <h3> MASTERS</h3>
+      <p> Masters degree in IT.
+        A master's degree[note 1] (from Latin magister) is an academic degree awarded by universities or colleges upon completion of a course of study demonstrating mastery or a high-order overview of a specific field of study or area of professional practice.[1] A master's degree normally requires previous study at the bachelor's level, either as a separate degree or as part of an integrated course. Within the area studied, master's graduates are expected to possess advanced knowledge of a specialized body of theoretical and applied topics; high order skills in analysis, critical evaluation, or professional application; and the ability to solve complex problems and think rigorously and independently.
+      </p></div>
+    <div class = "course-col">
+      <h3>DIPLOMA</h3>
+      <p> Diploma degree in IT.
+        A diploma is a certificate or deed issued by an educational institution, such as college or university, that testifies that the recipient has successfully completed a particular course of study. The word diploma also refers to an academic award which is given after the completion of study in different courses such as diploma in higher education, diploma in graduation or diploma in post-graduation. Historically, it can also refer to a charter or official document,[1] thus diplomatic,[2] diplomat[3] and diplomacy[4] via the Codex Juris Gentium Diplomaticus.[2]
+      </p></div>
+</div>
+</section>
+<!---------campus----------->
+
+<!-- <section class = "campus">
+<h1> OUR GLOBAL CAMPUS </h1>
+<p> Our global campus is one of the finest campuses in whole of Rwanda. One of the best infrastructure and management has made our global campus a perfect place for students to invest in us.<br>
+We have our other compus branches in Masoro,Kimihurura and Nyarutarama, Nyamata.
+</p>
+
+<div class = "row">
+<div class ="campus-col">
+<img src = "uimages/london.jpg">
+<div class ="layer">
+<h3>Masoro</h3>
+</div>
+</div>
+<div class ="campus-col">
+<img src = "uimages/sydney.jpg">
+<div class ="layer">
+<h3>Kimihurura</h3>
+</div>
+</div>
+<div class ="campus-col">
+<img src = "uimages/auckland1.jpg">
+<div class ="layer">
+<h3>Nyarutarama</h3>
+</div>
+</div>
+
+</div>
+</section> -->
+<section id="blog" class="blog-content">
+  <div class = "row">
+
+    <div class ="blog-left">
+      <img src ="/img/graduation6.jpg">
+    </div>
+    <div class = "blog-right">
+      <h2>OUR CERTIFICATE PROGRAMS</h2>
+      <p> 1.COMPUTER CODING LANGUAGES<br>
+        *JAVASCRIPT<br>
+        *PYTHON<br>
+        *JAVA<br>
+        *C++<br>
+        *C<br>
+        2.NETWORKING AND COMMUNICATION SYSTEM<br>
+        *LINUX<br>
+        *PACKET TRACER<br>
+        *NETWORK SECURITY<br>
+
+      </P>
+    </div>
+  </div>
+  </div>
+
+  <div class ="comment-box">
+    <h3>Leave a Comment</h3>
+    <form class = "comment-form">
+      <input type ="text" placeholder = "Enter Name">
+      <input type ="email" placeholder= "Enter Email">
+      <textarea rows ="5" placeholder = "Your Comment">
+    </textarea>
+      <button type="submit" class ="hero-btn blue-btn"> Post Comment</button>
+    </form>
+  </div>
+</section>
+
+
+<!--------------------facilities------------>
+
+<section class ="facilities">
+  <h1>  OUR FACILITIES </h1>
+  <p>Library: We have the biggest library in whole of Rwanda which has the broadest collection of books.<br>
+    Faculty: The most reputed faculty in  whole of Rwanda.<br>
+    Sports: The most widely celebrated campuses for sports.</p>
+
+  <div class = "row">
+    <div class = "facilities-col">
+      <img src ="/img/library.jpg">
+      <h3>LIBRARY</h3>
+      <p>Library buildings often provide quiet and conducive areas for studying, as well as common areas for group study and collaboration, and may provide public facilities for access to their electronic resources; for instance: computers and access to the Internet. The library's clientele and therefore the services offered vary depending on its type: users of a public library have different needs from those of a special library, for example. Libraries may also be community hubs, where programs are delivered and people engage in lifelong learning.Librarians/information specialists
+        See also: Education for librarianship
+
+        Libraries are usually staffed by a combination of professionally-trained librarians, paraprofessional staff sometimes called library technicians, and support staff. Some topics related to the education of librarians and allied staff include accessibility of the collection, acquisition of materials, arrangement and finding tools, the book trade, the influence of the physical properties of the different writing materials, language distribution, role in education, rates of literacy, budgets, staffing, libraries for specially targeted audiences, architectural merit, patterns of usage, the role of libraries in a nation's cultural heritage, and the role of government, church or private sponsorship. Since the 1960s, issues of computerization and digitization have arisen.[1] Librarians are trained to be vibrant people and be updated with trending Information in order relevant Information.[citation needed]  </p>
+    </div>
+
+    <div class = "facilities-col">
+      <img src ="/img/rugby.jpg"> <img src = "/img/basketball.jpg"> <img src = "/img/baseball.jpg">
+      <h3>SPORTS</h3>
+      <p>RUGBY,referred as football.rw and also known as gridiron,[nb 1] is a team sport played by two teams of eleven players on a rectangular field with goalposts at each end. The offense, the team with possession of the oval-shaped football, attempts to advance down the field by running with the ball or passing it, while the defense, the team without possession of the ball, aims to stop the offense's advance and to take control of the ball for themselves. The offense must advance at least ten yards in four downs or plays; if they fail, they turn over the football to the defense, but if they succeed, they are given a new set of four downs to continue the drive. Points are scored primarily by advancing the ball into the opposing team's end zone for a touchdown or kicking the ball through the opponent's goalposts for a field goal. The team with the most points at the end of a game wins.  </p>
+    </div>
+
+    <div class = "facilities-col">
+      <img src ="/img/cafeteria2.jpg">
+      <h3>CAFETERIA CASTLE</h3>
+      <p> The method of payment for college cafeterias is commonly in the form of a meal plan, whereby the patron pays a certain amount at the start of the semester and details of the plan are stored on a computer system. Student ID cards are then used to access the meal plan. Meal plans can vary widely in their details and are often not necessary to eat at a college cafeteria. Typically, the college tracks students' usage of their plan by counting the number of predefined meal servings, points, dollars or number of buffet dinners. The plan may give the student a certain number of any of the above per week or semester and they may or may not roll over to the next week or semester.[11]
+
+        Many schools offer several different options for using their meal plans. The main cafeteria is usually where most of the meal plan is used but smaller cafeterias, cafés, restaurants, bars or even fast food chains located on campus, on nearby streets, or in the surrounding town or city may accept meal plans. A college cafeteria system often has a virtual monopoly on the students due to an isolated location or a requirement that residence contracts include a full meal plan.[citation needed] .Cafeterias serving university dormitories are sometimes called dining halls or dining commons. A food court is a type of cafeteria found in many shopping malls and airports featuring multiple food vendors or concessions, although a food court could equally be styled as a type of restaurant as well, being more aligned with public, rather than institutionalised, dining. Some institutions, especially schools, have food courts with stations offering different types of food served by the institution itself (self-operation) or a single contract management company, rather than leasing space to numerous businesses.  </p>
+    </div>
+  </div>
+</section>
+<!-------------KNIGHT KING COMPETITION--------->
+
+<!-- <section class = "knightwarrior">
+<img src = "uimages/champion.jpg">
+
+<h1>KNIGHT WARRIOR COMPETITION</h1>
+<p> One of the most anticipated and awaited competition of our campus is the KNIGHT WARRIOR Competition. <br>
+Students from the castle participate in this competition to win over the title of "KNIGHT WARRIOR". <br>
+A very honored position indeed, for it is the hardest and most difficult competition held in the castle.<br>
+Participants have to go through a lot of hard tasks to win over this title.</p>
+
+
+<div class = "row">
+
+<div class ="warrior-col">
+<img src = "uimages/boxing.jpg">
+<h3> 1.BOXING MATCH</h3>
+<p> 1st step towards the Knight Warrior title is through a Boxing Match.<br>
+Winners in this round will move to next step.</p>
+</div>
+
+<div class ="warrior-col">
+<img src = "uimages/muaithai.jpg">
+<h3> 2.MUAI THAI FIGHT</h3>
+<p> 2nd step towards the Knight Warrior title is through a Muai Thai martial arts Match.<br>
+Winners in this round will move to next step.</p>
+</div>
+
+<div class ="warrior-col">
+<img src = "uimages/sword1.jpg">
+<h3> 3.FINAL : THE SWORD FIGHT </h3>
+<p> 3rd step towards the Knight Warrior title is through a Sword fight.<br>
+Winners in this round will get the honour of wearing the KNIGHT WARRIOR SUIT. </p>
+</div>
+</div>
+</section> -->
+<h1> About Us</h1>
+</section>
+<!------------------ABOUT US CONTENT---------------->
+<section id="about" class="about-us">
+
+  <div class = "row">
+    <div class = "about-col">
+      <h1> We are the World's Largest University</h1>
+      <p> The best of the best! Hurry up...</p>
+      <a href =" "class = "hero-btn blue-btn">EXPLORE US</a>
+    </div>
+    <div class = "about-col">
+      <img src ="/img/london.jpg">
+    </div>
+  </div>
+</section>
+<!-----------TESTIMONIALS------------------>
+<section class= "testimonials">
+  <h1> Student Opinion </h1>
+  <P> Lets listen to what our alumni say!</p>
+
+  <div class = "row">
+    <div class = "testimonial-col">
+      <div>
+        <P> " I got lucky to get a seat here as for we Rwandansit's hard to get into an university abroad like this, as there are always limited seats for outside candidates.<br>
+          I found myself , my skills , my strenghts and weaknesses here. Its my home. It will always be my home..."</p>
+        <h3>MRS KINAH SHEKINAH.</h3>
+      </div>
+    </div>
+
+    <div class = "testimonial-col">
+      <div>
+        <P> "I fell in love with the infrastructure , the moment i got here. All the activities and enthusiam is always overwhelming...</p>
+        <h3>MR DWAYNE FLAVIER.</h3>
+      </div>
+    </div>
+
+    <div class = "testimonial-col">
+      <div>
+        <P> "We lived like a family here. Its a home for us. There's a bond, unbreakable towards this university. I found my peace and talent here.....must go to university  i would say..!</p>
+        <h3>MR FAHIR.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------------call to action---------->
+
+<section class ="cta">
+  <h1> Enroll for our UNIVERSITY</h1>
+  <a href = " " class = "hero-btn">Contact us</a>
+
+</section>
+<!----------footer---------->
+
+<section id="footer" class= "footer">
+  <h4>ABOUT US</h4>
+  <p>We have built a castle , and we consider our students as Warriors!.<br>This unique concept of building the infrastructure of a university like a castle has got us to the list of most attractive and unique universities of all the time.</p>
+  <div class ="icons">
+    <i class ="fa fa-facebook"></i>
+    <i class ="fa fa-instagram"></i>
+    <i class ="fa fa-twitter"></i>
+    <i class ="fa fa-linkedin"></i>
+
+    <div>
+      <P> made by SHAMI KELLY CARTER</p>
+    </div>
+  </div>
+</section>
+<!-------------------JAVASCRIPT-------------->
+<script>
+  var navLinks = document.getElementById("navLinks");
+  function showMenu(){
+    navLinks.style.right = "0";
+  }
+  function hideMenu(){
+    navLinks.style.right ="-200px";
+  }
+</script>
+
+
+
+</body>
+</html>
+
+
+

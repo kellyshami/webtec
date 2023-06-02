@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Student Results Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    form {
+      width: 50%;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0px 0px 10px #888888;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="submit"] {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+<!--<div>-->
+<h1>Student Results Form</h1>
+<!--<h2><a href="/users">Manage Students</a></h2>-->
+<form th:action="@{/updateForm}" method="post" th:object="${student}">
+  <label for="id">Student ID:</label>
+  <input type="text" id="id" name="id" th:field="*{studentId}">
+
+  <label for="name">Student Name:</label>
+  <input type="text" id="name" name="StudentName" th:field="*{studentName}">
+
+  <label for="course">Course:</label>
+  <input type="text" id="course" name="course" th:field="*{course}">
+
+  <label for="result">Result:</label>
+  <input type="text" id="result" name="Result" th:field="*{result}">
+
+  <input type="submit" value="Submit">
+  <!--  <button type="submit" th:href="@{/dashboard}" >Submit</button>-->
+</form>
+<!--</div>-->
+</body>
+</html>

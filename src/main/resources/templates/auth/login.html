@@ -1,0 +1,305 @@
+<!--&lt;!&ndash;login.html&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Warriors'Castle - Log In</title>-->
+<!--    &lt;!&ndash;    <link rel="stylesheet" href="/css/style.css">&ndash;&gt;-->
+<!--    <link rel="stylesheet" type="text/css" href="/css/koo.css">-->
+<!--&lt;!&ndash;    <style>&ndash;&gt;-->
+<!--&lt;!&ndash;        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');&ndash;&gt;-->
+<!--&lt;!&ndash;        * {&ndash;&gt;-->
+<!--&lt;!&ndash;            box-sizing: border-box;&ndash;&gt;-->
+<!--&lt;!&ndash;            text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        body {&ndash;&gt;-->
+<!--&lt;!&ndash;            font-family: 'Montserrat', sans-serif;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #555555;&ndash;&gt;-->
+<!--&lt;!&ndash;            display: flex;&ndash;&gt;-->
+<!--&lt;!&ndash;            flex-direction: column;&ndash;&gt;-->
+<!--&lt;!&ndash;            justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            align-items: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 100vh;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: -20px 0 50px;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-top: 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        h1 {&ndash;&gt;-->
+<!--&lt;!&ndash;            font-weight: bold;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        p {&ndash;&gt;-->
+<!--&lt;!&ndash;            font-size: 14px;&ndash;&gt;-->
+<!--&lt;!&ndash;            font-weight: 100;&ndash;&gt;-->
+<!--&lt;!&ndash;            line-height: 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;            letter-spacing: .5px;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: 20px 0 30px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        span {&ndash;&gt;-->
+<!--&lt;!&ndash;            font-size: 12px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        a {&ndash;&gt;-->
+<!--&lt;!&ndash;            color: #148b05;&ndash;&gt;-->
+<!--&lt;!&ndash;            font-size: 14px;&ndash;&gt;-->
+<!--&lt;!&ndash;            text-decoration: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: 15px 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        .container {&ndash;&gt;-->
+<!--&lt;!&ndash;            background-color: #444444;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;            box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);&ndash;&gt;-->
+<!--&lt;!&ndash;            position: relative;&ndash;&gt;-->
+<!--&lt;!&ndash;            overflow: hidden;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 500px;&ndash;&gt;-->
+<!--&lt;!&ndash;            max-width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            min-height: 480px;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .form-container form {&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #999999;&ndash;&gt;-->
+<!--&lt;!&ndash;            display: flex;&ndash;&gt;-->
+<!--&lt;!&ndash;            flex-direction: column;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding:  150px;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            align-items: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .social-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: 10px 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .social-container a {&ndash;&gt;-->
+<!--&lt;!&ndash;            border: 1px solid #148b05;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;            display: inline-flex;&ndash;&gt;-->
+<!--&lt;!&ndash;            justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            align-items: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: 0 5px;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 40px;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 40px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .form-container input {&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #ebe9e9;&ndash;&gt;-->
+<!--&lt;!&ndash;            border: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 12px 15px;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: 8px 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 85%;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        button {&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;            border: 1px solid #47cebe;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #47cebe;&ndash;&gt;-->
+<!--&lt;!&ndash;            color: #fff;&ndash;&gt;-->
+<!--&lt;!&ndash;            font-size: 12px;&ndash;&gt;-->
+<!--&lt;!&ndash;            font-weight: bold;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 12px 45px;&ndash;&gt;-->
+<!--&lt;!&ndash;            letter-spacing: 1px;&ndash;&gt;-->
+<!--&lt;!&ndash;            text-transform: uppercase;&ndash;&gt;-->
+<!--&lt;!&ndash;            transition: transform 80ms ease-in;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        button:active {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: scale(.95);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        button:focus {&ndash;&gt;-->
+<!--&lt;!&ndash;            outline: none;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        button.ghost {&ndash;&gt;-->
+<!--&lt;!&ndash;            background: transparent;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-color: #fff;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .form-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;            top: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            transition: all .6s ease-in-out;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .sign-in-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            left: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;            z-index: 2;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .sign-up-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            left: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;            z-index: 1;&ndash;&gt;-->
+<!--&lt;!&ndash;            opacity: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .overlay-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;            top: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            left: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            overflow: hidden;&ndash;&gt;-->
+<!--&lt;!&ndash;            transition: transform .6s ease-in-out;&ndash;&gt;-->
+<!--&lt;!&ndash;            z-index: 100;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .overlay {&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #148b05;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: linear-gradient(to right, #148b05, #148b05) no-repeat 0 0 / cover;&ndash;&gt;-->
+<!--&lt;!&ndash;            color: #fff;&ndash;&gt;-->
+<!--&lt;!&ndash;            position: relative;&ndash;&gt;-->
+<!--&lt;!&ndash;            left: -100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 200%;&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateY(0);&ndash;&gt;-->
+<!--&lt;!&ndash;            transition: transform .6s ease-in-out;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .overlay-panel {&ndash;&gt;-->
+<!--&lt;!&ndash;            position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;            top: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            display: flex;&ndash;&gt;-->
+<!--&lt;!&ndash;            flex-direction: column;&ndash;&gt;-->
+<!--&lt;!&ndash;            justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            align-items: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 0 40px;&ndash;&gt;-->
+<!--&lt;!&ndash;            height: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;            text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateY(0);&ndash;&gt;-->
+<!--&lt;!&ndash;            transition: transform .6s ease-in-out;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .overlay-right {&ndash;&gt;-->
+<!--&lt;!&ndash;            right: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateY(0);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .overlay-left {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateY(-20%);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        /* Move signin to right */&ndash;&gt;-->
+<!--&lt;!&ndash;        .container.right-panel-active .sign-in-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateY(100%);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        /* Move overlay to left */&ndash;&gt;-->
+<!--&lt;!&ndash;        .container.right-panel-active .overlay-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateX(-100%);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        /* Bring signup over signin */&ndash;&gt;-->
+<!--&lt;!&ndash;        .container.right-panel-active .sign-up-container {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateX(100%);&ndash;&gt;-->
+<!--&lt;!&ndash;            opacity: 1;&ndash;&gt;-->
+<!--&lt;!&ndash;            z-index: 5;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        /* Move overlay back to right */&ndash;&gt;-->
+<!--&lt;!&ndash;        .container.right-panel-active .overlay {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateX(50%);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        /* Bring back the text to center */&ndash;&gt;-->
+<!--&lt;!&ndash;        .container.right-panel-active .overlay-left {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateY(0);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        /* Same effect for right */&ndash;&gt;-->
+<!--&lt;!&ndash;        .container.right-panel-active .overlay-right {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: translateY(20%);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        h1, h2, h3 {&ndash;&gt;-->
+<!--&lt;!&ndash;            text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .container {&ndash;&gt;-->
+<!--&lt;!&ndash;            text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <div class="form-container">-->
+
+<!--        <form th:action="@{/login}" method="POST" class="form-signin" >-->
+<!--            <h1>Sign In</h1>-->
+
+<!--            <input type="text" name="email" th:placeholder="Email" /> <br /><br />-->
+<!--            <input type="password" th:placeholder="Password" name="password" /> <br /><br />-->
+
+<!--            <button type="Submit" th:text="Login"></button><p>Don't have an account?</p><a th:href="@{|/register|}" th:text="'Register'"></a><br />-->
+<!--            <div th:if="${param.error}"><p>Email or Password is invalid.</p></div> <br />-->
+
+
+<!--        </form>-->
+
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="/js/script.js"></script>-->
+<!--<script src="/js/main.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Login Form</title>
+    <link rel="stylesheet" type="text/css" href="css/koo.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<img class="wave" src="img/wave.png">
+<div class="container">
+    <div class="img">
+        <img src="img/bg.svg">
+    </div>
+    <div class="login-content">
+<!--        <form action="index.html">-->
+            <form th:action="@{/login}" method="POST" class="form-signin" >
+            <img src="img/avatar.svg">
+            <h2 class="title">Login</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <h5>Email</h5>
+                    <input type="text" th:placeholder="Email" name="email" class="input">
+                </div>
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <h5>Password</h5>
+                    <input type="password" th:placeholder="Password" name="password" class="input">
+                </div>
+            </div>
+            <a href="#">Forgot Password?</a>
+<!--            <p class="message">Not registered? <a href="register.html">Signup</a></p>-->
+<!--         <input type="submit" class="btn" value="Login">-->
+                <button type="Submit" class="btn" th:text="Login"></button><p>Don't have an account?</p><a th:href="@{/register}" th:text="'Register'"></a>
+                <div th:if="${param.error}"><p>Email or Password is invalid.</p></div> <br />
+            </form>
+    </div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

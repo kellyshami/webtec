@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/homestyle.css" />
+  <title>Warrior'Castle</title>
+</head>
+<body>
+<div class="container">
+  <div class="logo-area">
+    <img src="/img/tebo.jpg" alt="" />
+    <div>
+      <div class="part-name">Warrior'Castle</div>
+      <div class="another-part">CA
+        <div class="another-part">CARS</div>
+      </div>
+    </div>
+    <form action="" method="post" id="infor">
+      <div class="information">
+        <h2>DASHBOARD</h2>
+        <p>CRUD TABLE</p>
+      </div>
+      <div class="wrapper">
+        <div class="table" >
+          <div class="row header green">
+            <table width="100%">
+              <thead>
+              <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Course</td>
+                <td>Result</td>
+<!--                <td>Action</td>-->
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="row:${data}">
+                <td th:text="${row.getId}"></td>
+                <td th:text="${row.getName}"></td>
+                <td th:text="${row.getCourse}"></td>
+                <td th:text="${row.getResult}"></td>
+                <td>
+                  <a th:href="@{/edit/{id}(id=${row.getId()})}">Edit</a> |
+                  <a th:href="@{/delete/{id}(id=${row.getId()})}">Delete</a>
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
